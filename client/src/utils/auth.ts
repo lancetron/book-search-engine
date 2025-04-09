@@ -1,9 +1,20 @@
 // use this to decode a token and get the user's information out of it
 import { jwtDecode } from 'jwt-decode';
+import type { Request } from 'express';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 interface UserToken {
   name: string;
   exp: number;
+}
+
+interface JwtPayload {
+  _id: unknown;
+  username: string;
+  email: string;
 }
 
 // create a new class to instantiate for a user
@@ -52,5 +63,30 @@ class AuthService {
     window.location.assign('/');
   }
 }
+
+export const authenticateToken = (req: Request) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) {
+    throw new Error('Authorization header missing');
+  }
+
+  const token = authHeader.split(' ')[1];
+  const secretKey = process.env.JWT_SECRET_KEY || '';
+
+  try {
+    const user = jwt.verify(token, secretKey) as JwtPayload;
+    return user;
+  } catch {
+    throw new Error('Invalid or expired token');
+  }
+};
+
+export const signToken = (username: string, email: string, _id: unknown) => {
+  const payload = { username, email, _id };
+  const secretKey = process.env.JWT_SECRET_KEY || '';
+
+  return jwt.sign(payload, secretKey, { expiresIn: '1h' });
+};
 
 export default new AuthService();
