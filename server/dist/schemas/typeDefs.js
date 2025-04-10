@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.typeDefs = void 0;
 // filepath: server/src/schemas/typeDefs.ts
-const graphql_tag_1 = require("graphql-tag");
-exports.typeDefs = (0, graphql_tag_1.gql) `
+import { gql } from 'graphql-tag';
+export const typeDefs = gql `
   type Query {
     me: User
   }
