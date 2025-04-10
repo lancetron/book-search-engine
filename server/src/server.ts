@@ -4,8 +4,8 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import { json } from 'body-parser';
 import db from './config/connection.js';
-import { typeDefs } from './schemas/typeDefs.js';
-import { resolvers } from './schemas/resolvers.js';
+import { typeDefs } from './schemas/typeDefs.ts';
+import { resolvers } from './schemas/resolvers.ts';
 import { authenticateToken } from './services/auth.js';
 
 const app = express();
