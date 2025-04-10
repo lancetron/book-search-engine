@@ -3,9 +3,12 @@
   "compilerOptions": {
     /* Modules */
     "rootDir": "src" /* Specify the root folder within your source files. */,
-    "module": "commonjs", // Use 'commonjs' or 'es2015' as needed
-    "target": "es6",
+    "module": "esnext", // Allows 'import.meta' and top-level 'await'
+    "target": "es2020", // Ensures compatibility with modern JavaScript features
     "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
 
     /* Emit */
     "outDir": "dist" /* Specify an output folder for all emitted files. */

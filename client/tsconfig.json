@@ -1,10 +1,10 @@
 {
 // Bundler mode
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2020", // Ensures compatibility with modern JavaScript features
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "commonjs", // Use 'commonjs' or 'es2015' as needed
+    "module": "esnext", // Allows 'import.meta' and top-level 'await'
     "skipLibCheck": true,
     "moduleResolution": "node",
     "allowImportingTsExtensions": true,
@@ -14,6 +14,7 @@
     "jsx": "react-jsx",
     "outDir": "dist",
     "rootDir": "src",
+    "esModuleInterop": true,
 
     /* Linting */
     "strict": true,
