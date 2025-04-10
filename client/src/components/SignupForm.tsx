@@ -7,7 +7,7 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import type { User } from '../models/User';
 
-const SignupForm = ({ handleModalClose }: { handleModalClose: () => void }) => {
+const SignupForm = ({ }: { handleModalClose: () => void }) => {
   // set initial form state
   const [userFormData, setUserFormData] = useState<User>({ username: '', email: '', password: '', savedBooks: [] });
   // set state for form validation
