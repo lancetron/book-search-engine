@@ -3,7 +3,7 @@
   "compilerOptions": {
     /* Modules */
     "rootDir": "src" /* Specify the root folder within your source files. */,
-    "module": "commonjs",
+    "module": "commonjs", // Use 'commonjs' or 'es2015' as needed
     "target": "es6",
     "strict": true,
 

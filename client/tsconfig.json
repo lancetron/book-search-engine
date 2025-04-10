@@ -4,7 +4,7 @@
     "target": "es6",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "es2015", // Change this to 'es2015' or 'preserve'
+    "module": "commonjs", // Use 'commonjs' or 'es2015' as needed
     "skipLibCheck": true,
     "moduleResolution": "node",
     "allowImportingTsExtensions": true,
