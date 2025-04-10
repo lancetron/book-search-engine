@@ -7,7 +7,7 @@
 
     /* Modules */
     "module": "commonjs" /* Specify what module code is generated. */,
-    "moduleResolution": "Bundler" /* Specify how TypeScript looks up a file from a given module specifier. */,
+    "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
     "skipLibCheck": true,
     "bundler": "esbuild" /* Ensure this is valid if you're using a bundler */,
 
